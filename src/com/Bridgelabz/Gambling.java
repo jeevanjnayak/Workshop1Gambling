@@ -5,26 +5,29 @@ public class Gambling {
     public static final int STAKE_PER_DAY = 100;
 
     public static void main(String[] args) {
-        int stakePerDay = 100;
+
         int winnings = 0;
         int totalWinning = 0;
-        while (winnings > -(stakePerDay)) {
+
+        while (winnings > -(STAKE_PER_DAY)) {
+
             if (winnings < 100){
                 byte betResult = (byte) (Math.floor(Math.random() * 10) % 2);
+
                 if (betResult == 1) {
-                    winnings += 1;
+                    winnings++;
                     totalWinning = winnings;
                 }
                 else {
-                    winnings -= 1;
+                    winnings--;
                     totalWinning = winnings;
                 }
             }
             else
-                winnings = -(stakePerDay);
+                winnings = -(STAKE_PER_DAY);
 
         }
-        System.out.println(totalWinning);
+        System.out.println("The total winning is " +totalWinning+ "$");
 
     }
 
